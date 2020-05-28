@@ -25,25 +25,46 @@ class Clip extends React.Component {
     }
 
     render() {
+        var clipStyle = {
+            resize: "none",
+            width: "400px",
+	        height: "120px",
+            padding: "3px"
+        };
+
+        var buttonStyle = {
+            padding: "3px",
+            margin: "3px"
+        };
+
+        var inputStyle = {
+            padding: "2px"
+        }
+
         return (
         <div>
             <input type="text" 
                    name="username" 
                    placeholder="username"  
+                   style={inputStyle}  
                    value={this.state.username} 
-                   onChange={this.handleChange.bind(this)}></input><br/>
+                   onChange={this.handleChange.bind(this)}></input><code>&</code>
             <input type="text" 
                    name="tag"      
-                   placeholder="#tag"      
+                   placeholder="#tag"  
+                   style={inputStyle}    
                    value={this.state.tag}      
                    onChange={this.handleChange.bind(this)}></input><br/>
-            <button onClick={() => this.handleSave()}>save</button>
-            <button onClick={() => this.handleRetrieve()}>retrieve</button><br/>
-            <input type="text" 
+            <button style={buttonStyle}
+                    onClick={() => this.handleSave()}>save</button>
+            <button style={buttonStyle}
+                    onClick={() => this.handleRetrieve()}>retrieve</button><br/>
+            <textarea type="text" 
                    name="text"     
                    placeholder="Clipboard" 
                    value={this.state.text}     
-                   onChange={this.handleChange.bind(this)}></input><br/>
+                   onChange={this.handleChange.bind(this)}
+                   style={clipStyle}></textarea><br/>
         </div>
         );
     }
