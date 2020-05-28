@@ -26,19 +26,23 @@ class Clip extends React.Component {
 
     render() {
         var clipStyle = {
-            resize: "none",
-            width: "400px",
+            width: "360px",
 	        height: "120px",
-            padding: "3px"
+            padding: "3px",
+            margin: "5px",
+            border: "1px solid #D7CCCC"
         };
 
         var buttonStyle = {
             padding: "3px",
-            margin: "3px"
+            margin: "5px",
+            border: "1px solid #EBE3E3"
         };
 
         var inputStyle = {
-            padding: "2px"
+            padding: "2px",
+            margin: "5px",
+            border: "1px solid #D7CCCC"
         }
 
         return (

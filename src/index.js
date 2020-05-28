@@ -4,12 +4,16 @@ import Clip from './Clip';
 import * as serviceWorker from './serviceWorker';
 
 var noticeStyle = {
-  color: 'red'
+  color: 'red',
+};
+
+var headerStyle = {
+  margin: "5px"
 };
 
 ReactDOM.render(
   <React.StrictMode>
-    <header>
+    <header style={headerStyle}>
       <h2>Online Clipboard</h2>
       <p>This is an online clipboard tool. </p>
       <p>It saves your text into cloud, identified with your <code>username & #tag</code>.</p>
