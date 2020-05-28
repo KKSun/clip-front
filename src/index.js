@@ -14,7 +14,7 @@ ReactDOM.render(
         <li>1. Enter username and #tag.</li>
         <li>2. Paste anything you want in clipboard.</li>
         <li>3. On other devices, enter username and #tag to get your clipboard.</li>
-      <p>Notice: Text in clipboard will be destrioed in 48 hours.</p>
+      <p>Notice: Text in clipboard will be destrioed after 48 hours.</p>
     </header>
     <div>
       <Clip />
