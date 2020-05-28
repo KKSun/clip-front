@@ -5,7 +5,17 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <header>Online Clipboard</header>
+    <header>
+      <h2>Online Clipboard</h2>
+      <p>This is an online clipboard tool. </p>
+      <p>It saves your text into cloud, identified with your username and #tag.</p>
+      <p>You can retrieve your text through <a href="https://clip.kksun.site">https://clip.kksun.site</a> with username and #tag on any device.</p>
+      <p>Follow Steps:</p>
+        <li>1. Enter username and #tag.</li>
+        <li>2. Paste anything you want in clipboard.</li>
+        <li>3. On other devices, enter username and #tag to get your clipboard.</li>
+      <p>Notice: Text in clipboard will be destrioed in 48 hours.</p>
+    </header>
     <div>
       <Clip />
     </div>
