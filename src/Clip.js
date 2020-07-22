@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Clip extends React.Component {
     constructor(props){
@@ -17,7 +18,13 @@ class Clip extends React.Component {
     }
 
     handleRetrieve(){
-        console.log(this.state.text)
+        var paramTag = this.state.tag
+        var paramName = this.state.username
+        var proxy = "https://cors-anywhere.herokuapp.com/"
+        var url = "3.218.163.4:9090/sql/fetch?name=" + paramName + "&tag=" + paramTag
+        axios.get(proxy + url).then(resp => {
+            this.setState({text : resp.data});
+        });
     }
 
     handleChange(e){
