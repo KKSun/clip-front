@@ -12,19 +12,25 @@ class Clip extends React.Component {
     }
 
     handleSave() {
-        console.log(this.state.username)
-        console.log(this.state.tag)
-        console.log(this.state.text)
+        var url = "http://localhost:9090/sql/add"
+        fetch(url, {
+            method: 'POST',
+            headers: new Headers({
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }),
+            body: "name=" + this.state.username + "&tag=" + this.state.tag + "&text=" + this.state.text
+        })
     }
 
     handleRetrieve(){
         var paramTag = this.state.tag
         var paramName = this.state.username
-        var proxy = "https://cors-anywhere.herokuapp.com/"
-        var url = "3.218.163.4:9090/sql/fetch?name=" + paramName + "&tag=" + paramTag
-        axios.get(proxy + url).then(resp => {
+        // var proxy = "https://cors-anywhere.herokuapp.com/"
+        var url = "http://localhost:9090/sql/fetch?name=" + paramName + "&tag=" + paramTag
+        axios.get(url).then(resp => {
             this.setState({text : resp.data});
-        });
+        }).catch(error => {console.log(error)})
+        console.log(paramName + ", " + paramTag)
     }
 
     handleChange(e){
